@@ -1,6 +1,7 @@
 {
     "name": "thuando/transcriptions",
     "description": "Load and parse VTT files.",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Laracasts\\Transcriptions\\": "src/"
