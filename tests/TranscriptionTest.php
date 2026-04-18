@@ -2,6 +2,7 @@
 namespace Tests;
 
 use ArrayAccess;
+use JsonSerializable;
 use Laracasts\Transcriptions\Line;
 use Laracasts\Transcriptions\Lines;
 use PHPUnit\Framework\Attributes\Test;
@@ -60,5 +61,14 @@ class TranscriptionTest extends TestCase
 
         $this->assertInstanceOf(ArrayAccess::class, $lines);
         $this->assertInstanceOf(Line::class, $lines[0]);
+    }
+
+    #[Test]
+    public function it_can_render_as_json()
+    {
+        $lines = $this->transcription->lines();
+
+        $this->assertInstanceOf(JsonSerializable::class, $lines);
+        $this->assertJson(json_encode($lines));
     }
 }
