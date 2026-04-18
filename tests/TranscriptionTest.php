@@ -1,7 +1,9 @@
 <?php
 namespace Tests;
 
+use ArrayAccess;
 use Laracasts\Transcriptions\Line;
+use Laracasts\Transcriptions\Lines;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Laracasts\Transcriptions\Transcription;
@@ -49,5 +51,14 @@ class TranscriptionTest extends TestCase
             EOT;
 
         $this->assertEquals($expected, $this->transcription->lines()->asHtml());
+    }
+
+    #[Test]
+    public function it_suport_array_access()
+    {
+        $lines = $this->transcription->lines();
+
+        $this->assertInstanceOf(ArrayAccess::class, $lines);
+        $this->assertInstanceOf(Line::class, $lines[0]);
     }
 }
