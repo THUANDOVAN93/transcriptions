@@ -2,12 +2,6 @@
 
 namespace Laracasts\Transcriptions;
 
-use ArrayAccess;
-use ArrayIterator;
-use Countable;
-use IteratorAggregate;
-use JsonSerializable;
-
 class Lines extends Collection
 {
 
