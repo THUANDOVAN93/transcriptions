@@ -1,5 +1,5 @@
 {
-    "name": "laracasts/transcriptions",
+    "name": "thuando/transcriptions",
     "description": "Load and parse VTT files.",
     "autoload": {
         "psr-4": {
